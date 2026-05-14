@@ -19,7 +19,7 @@ class SmartScanner:
         self.dangerous = {21: 'FTP', 23: 'Telnet', 3389: 'RDP', 5900: 'VNC'}
     
     def scan_port(self, port):
-        """Check if a single port is open"""
+        # check if a single port is open
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(1)
@@ -30,7 +30,7 @@ class SmartScanner:
             return False
     
     def run_scan(self):
-        """Scan all common ports"""
+        # scan all common ports
         print(f"Scanning {self.target} at {datetime.now()}")
         
         open_ports = []
